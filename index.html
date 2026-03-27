@@ -19,68 +19,72 @@
     --radius: 10px; --font: 'DM Sans', sans-serif; --serif: 'DM Serif Display', serif;
   }
 
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
   body {
     font-family: var(--font);
     background: var(--bg);
     color: var(--text);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0.5rem;
+    margin: 0;
   }
 
-  .page { width: 100%; max-width: 480px; }
+  .page { width: 100%; max-width: 420px; margin: 0 auto; }
 
-  .header { text-align: center; margin-bottom: 1rem; }
+  .header { text-align: center; margin-bottom: 0.5rem; }
 
   .header h1 {
     font-family: var(--serif);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: var(--text);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     letter-spacing: -.02em;
   }
 
-  .header p { font-size: 11px; color: var(--text-muted); }
+  .header p { font-size: 10px; color: var(--text-muted); }
 
   .hint {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    margin-bottom: 1rem;
-    font-size: 11px;
+    gap: 5px;
+    margin-bottom: 0.5rem;
+    font-size: 10px;
     color: var(--text-muted);
   }
 
   .hint-dot {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background: var(--teal);
     color: white;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
   }
 
   @keyframes pulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(29,158,117,.4); }
-    50% { box-shadow: 0 0 0 5px rgba(29,158,117,0); }
+    50% { box-shadow: 0 0 0 4px rgba(29,158,117,0); }
   }
 
   .grid-container {
     display: grid;
-    grid-template-columns: 24px 1fr 1fr;
-    grid-template-rows: 1fr 1fr 24px;
-    gap: 6px;
+    grid-template-columns: 20px 1fr 1fr;
+    grid-template-rows: 1fr 1fr 20px;
+    gap: 5px;
     width: 100%;
-    aspect-ratio: 1.15;
+    aspect-ratio: 1.1;
   }
 
   .y-axis {
@@ -94,10 +98,10 @@
   .y-axis span {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 600;
     color: var(--text-muted);
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
@@ -105,10 +109,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 600;
     color: var(--text-muted);
-    letter-spacing: .08em;
+    letter-spacing: .06em;
     text-transform: uppercase;
   }
 
@@ -117,7 +121,7 @@
   .quadrant {
     position: relative;
     border-radius: var(--radius);
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -137,9 +141,9 @@
     border-radius: var(--radius);
   }
 
-  .quadrant:hover { transform: scale(1.025); }
+  .quadrant:hover { transform: scale(1.02); }
   .quadrant:hover::before { opacity: 1; }
-  .quadrant.active { transform: scale(1.025); }
+  .quadrant.active { transform: scale(1.02); }
 
   .q-s3 { background: var(--teal-light); border-color: var(--teal-mid); grid-row:1; grid-column:2; }
   .q-s3::before { background: linear-gradient(135deg, rgba(29,158,117,.08) 0%, transparent 60%); }
@@ -159,13 +163,13 @@
 
   .q-number {
     font-family: var(--serif);
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 1;
-    opacity: .18;
+    opacity: .15;
     position: absolute;
-    top: 8px;
-    right: 10px;
+    top: 6px;
+    right: 8px;
   }
 
   .q-s3 .q-number { color: var(--teal-dark); }
@@ -174,13 +178,13 @@
   .q-s1 .q-number { color: var(--coral-dark); }
 
   .q-style-tag {
-    font-size: 8px;
+    font-size: 7px;
     font-weight: 600;
-    letter-spacing: .06em;
+    letter-spacing: .05em;
     text-transform: uppercase;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-bottom: 4px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-bottom: 3px;
   }
 
   .q-s3 .q-style-tag { background: var(--teal-mid); color: var(--teal-dark); }
@@ -188,26 +192,26 @@
   .q-s4 .q-style-tag { background: var(--blue-mid); color: var(--blue-dark); }
   .q-s1 .q-style-tag { background: var(--coral-mid); color: var(--coral-dark); }
 
-  .q-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+  .q-name { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
 
   .q-s3 .q-name { color: var(--teal-dark); }
   .q-s2 .q-name { color: var(--amber-dark); }
   .q-s4 .q-name { color: var(--blue-dark); }
   .q-s1 .q-name { color: var(--coral-dark); }
 
-  .q-maturity { font-size: 9px; color: var(--text-muted); line-height: 1.4; }
+  .q-maturity { font-size: 8px; color: var(--text-muted); line-height: 1.3; }
 
   .hotspot {
     position: absolute;
-    top: 8px;
-    left: 10px;
-    width: 18px;
-    height: 18px;
+    top: 6px;
+    left: 8px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: white;
     cursor: pointer;
@@ -219,321 +223,6 @@
   .q-s4 .hotspot { background: var(--blue); animation: pulse-blue 2s ease-in-out infinite 1s; }
   .q-s1 .hotspot { background: var(--coral); animation: pulse-coral 2s ease-in-out infinite 1.5s; }
 
-  @keyframes pulse-teal { 0%,100%{box-shadow:0 0 0 0 rgba(29,158,117,.4)} 50%{box-shadow:0 0 0 5px rgba(29,158,117,0)} }
-  @keyframes pulse-amber { 0%,100%{box-shadow:0 0 0 0 rgba(186,117,23,.4)} 50%{box-shadow:0 0 0 5px rgba(186,117,23,0)} }
-  @keyframes pulse-blue { 0%,100%{box-shadow:0 0 0 0 rgba(24,95,165,.4)} 50%{box-shadow:0 0 0 5px rgba(24,95,165,0)} }
-  @keyframes pulse-coral { 0%,100%{box-shadow:0 0 0 0 rgba(153,60,29,.4)} 50%{box-shadow:0 0 0 5px rgba(153,60,29,0)} }
-
-  .maturity-bar {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 0 28px;
-  }
-
-  .maturity-label { font-size: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
-
-  .maturity-track {
-    flex: 1;
-    height: 3px;
-    background: linear-gradient(to right, var(--coral-mid), var(--amber-mid), var(--teal-mid), var(--blue-mid));
-    border-radius: 2px;
-    position: relative;
-  }
-
-  .maturity-track::after {
-    content: '';
-    position: absolute;
-    right: -5px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-left: 5px solid var(--blue-mid);
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-  }
-
-  .maturity-steps {
-    display: flex;
-    justify-content: space-between;
-    padding: 3px 28px 0;
-  }
-
-  .m-step { font-size: 8px; color: var(--text-muted); text-align: center; flex: 1; }
-
-  .footer-note { text-align: center; font-size: 9px; color: var(--text-muted); margin-top: 8px; }
-
-  .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(44,44,42,.45);
-    backdrop-filter: blur(4px);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-  }
-
-  .modal-overlay.open { display: flex; }
-
-  .modal {
-    background: var(--bg);
-    border-radius: 14px;
-    max-width: 340px;
-    width: 100%;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,.2);
-    animation: modalIn .2s cubic-bezier(.34,1.56,.64,1);
-  }
-
-  @keyframes modalIn {
-    from { transform: scale(.92); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-
-  .modal-header {
-    padding: 1rem 1.25rem .75rem;
-    border-bottom: 1px solid var(--gray-mid);
-    position: relative;
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    background: var(--gray-light);
-    border: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    font-size: 12px;
-    cursor: pointer;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background .15s;
-  }
-
-  .modal-close:hover { background: var(--gray-mid); color: var(--text); }
-
-  .modal-badge {
-    display: inline-block;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 5px;
-    margin-bottom: 6px;
-  }
-
-  .modal-title { font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 2px; }
-  .modal-subtitle { font-size: 11px; color: var(--text-muted); }
-
-  .modal-body { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 10px; }
-
-  .modal-section-title {
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
-
-  .modal-section p { font-size: 12px; line-height: 1.6; color: var(--text); }
-
-  .modal-tags {
-    display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
-    padding-top: 4px;
-    border-top: 1px solid var(--gray-mid);
-  }
-
-  .modal-tag { font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 6px; }
-
-  .tag-task-high { background: var(--coral-light); color: var(--coral-dark); }
-  .tag-task-low { background: var(--blue-light); color: var(--blue-dark); }
-  .tag-rel-high { background: var(--teal-light); color: var(--teal-dark); }
-  .tag-rel-low { background: var(--gray-light); color: var(--gray); }
-  .tag-maturity { background: var(--amber-light); color: var(--amber-dark); }
-</style>
-</head>
-<body>
-
-<div class="page">
-  <div class="header">
-    <h1>Situational Leadership</h1>
-    <p>Hersey &amp; Blanchard · Adapted by Tomlin &amp; Poe</p>
-  </div>
-
-  <div class="hint">
-    <div class="hint-dot">+</div>
-    Click any quadrant to explore that leadership style
-  </div>
-
-  <div class="grid-container">
-    <div class="y-axis"><span>Relationship Behavior ↑</span></div>
-
-    <div class="quadrant q-s3" onclick="openModal('s3')">
-      <div class="hotspot">+</div>
-      <div class="q-number">S3</div>
-      <div class="q-style-tag">S3</div>
-      <div class="q-name">Participating</div>
-      <div class="q-maturity">M3 · Able but unwilling<br>Low task · High relationship</div>
-    </div>
-
-    <div class="quadrant q-s2" onclick="openModal('s2')">
-      <div class="hotspot">+</div>
-      <div class="q-number">S2</div>
-      <div class="q-style-tag">S2</div>
-      <div class="q-name">Selling</div>
-      <div class="q-maturity">M2 · Unable but willing<br>High task · High relationship</div>
-    </div>
-
-    <div class="quadrant q-s4" onclick="openModal('s4')">
-      <div class="hotspot">+</div>
-      <div class="q-number">S4</div>
-      <div class="q-style-tag">S4</div>
-      <div class="q-name">Delegating</div>
-      <div class="q-maturity">M4 · Able and willing<br>Low task · Low relationship</div>
-    </div>
-
-    <div class="quadrant q-s1" onclick="openModal('s1')">
-      <div class="hotspot">+</div>
-      <div class="q-number">S1</div>
-      <div class="q-style-tag">S1</div>
-      <div class="q-name">Telling</div>
-      <div class="q-maturity">M1 · Unable and unwilling<br>High task · Low relationship</div>
-    </div>
-
-    <div class="corner" style="grid-row:3;grid-column:1;"></div>
-    <div class="x-axis-low" style="grid-row:3;grid-column:2;">← Low task behavior</div>
-    <div class="x-axis-high" style="grid-row:3;grid-column:3;">High task behavior →</div>
-  </div>
-
-  <div class="maturity-bar">
-    <div class="maturity-label">M1</div>
-    <div class="maturity-track"></div>
-    <div class="maturity-label">M4</div>
-  </div>
-  <div class="maturity-steps">
-    <div class="m-step">Unable<br>Unwilling</div>
-    <div class="m-step">Unable<br>Willing</div>
-    <div class="m-step">Able<br>Unwilling</div>
-    <div class="m-step">Able<br>Willing</div>
-  </div>
-
-  <div class="footer-note" style="margin-top:8px;">
-    Follower maturity grows: M1 → M2 → M3 → M4 &nbsp;·&nbsp; The goal is always to move followers toward M4
-  </div>
-</div>
-
-<div class="modal-overlay" id="overlay" onclick="closeOnOverlay(event)">
-  <div class="modal">
-    <div class="modal-header">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div class="modal-badge" id="m-badge"></div>
-      <div class="modal-title" id="m-title"></div>
-      <div class="modal-subtitle" id="m-subtitle"></div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-section">
-        <div class="modal-section-title">Follower Maturity</div>
-        <p id="m-maturity"></p>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">What the Leader Does</div>
-        <p id="m-leader"></p>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-title">School Example</div>
-        <p id="m-example"></p>
-      </div>
-      <div class="modal-tags" id="m-tags"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-const data = {
-  s1: {
-    badge: 'S1 — Telling', badgeBg: '#FAECE7', badgeColor: '#712B13',
-    title: 'Telling', subtitle: 'High task behavior · Low relationship behavior',
-    maturity: 'M1 — Unable and unwilling. The follower lacks both the skill to perform the task and the motivation or confidence to try. The immature person is neither competent nor confident.',
-    leader: 'The leader provides specific, detailed instructions and closely supervises every step. Little two-way dialogue — the leader decides and directs. The focus is entirely on the task with minimal emotional support.',
-    example: 'A brand new teacher on their first day has no classroom management experience and feels overwhelmed. The principal provides a clear daily structure, checks in frequently, and gives specific step-by-step guidance.',
-    tags: [
-      { label: 'High task', cls: 'tag-task-high' },
-      { label: 'Low relationship', cls: 'tag-rel-low' },
-      { label: 'M1 maturity', cls: 'tag-maturity' }
-    ]
-  },
-  s2: {
-    badge: 'S2 — Selling', badgeBg: '#FAEEDA', badgeColor: '#854F0B',
-    title: 'Selling', subtitle: 'High task behavior · High relationship behavior',
-    maturity: 'M2 — Unable but willing. The follower is enthusiastic and motivated but does not yet have the skills or knowledge to perform the task independently. They want to succeed but need guidance.',
-    leader: 'The leader explains decisions, provides rationale, and invites questions. High direction is maintained but paired with strong emotional support and encouragement. The leader sells the vision and coaches the how.',
-    example: 'A new teacher is eager to implement the districts adopted online literacy intervention programs, but has no experience with it. The coordinator walks her through the basics, and checks in regularly with encouragement and needed resources.',
-    tags: [
-      { label: 'High task', cls: 'tag-task-high' },
-      { label: 'High relationship', cls: 'tag-rel-high' },
-      { label: 'M2 maturity', cls: 'tag-maturity' }
-    ]
-  },
-  s3: {
-    badge: 'S3 — Participating', badgeBg: '#E1F5EE', badgeColor: '#0F6E56',
-    title: 'Participating', subtitle: 'Low task behavior · High relationship behavior',
-    maturity: 'M3 — Able but unwilling. The follower has the skills to perform the task but lacks motivation, confidence, or buy-in. Often a follower who was once engaged but has become resistant or disengaged.',
-    leader: 'The leader steps back from directing and focuses on listening, involving the follower in decisions, and rebuilding ownership. Shared decision-making is the key behavior. The leader facilitates rather than instructs.',
-    example: 'A veteran teacher has the skills to use a new grading system but refuses to engage after a top-down rollout. The principal sits down, asks for her perspective, involves her in adapting the process, and gives her autonomy in how she implements it.',
-    tags: [
-      { label: 'Low task', cls: 'tag-task-low' },
-      { label: 'High relationship', cls: 'tag-rel-high' },
-      { label: 'M3 maturity', cls: 'tag-maturity' }
-    ]
-  },
-  s4: {
-    badge: 'S4 — Delegating', badgeBg: '#E6F1FB', badgeColor: '#0C447C',
-    title: 'Delegating', subtitle: 'Low task behavior · Low relationship behavior',
-    maturity: 'M4 — Able and willing. The follower is fully competent and motivated to self-direct. They take responsibility for their own decisions and performance without needing close supervision or emotional support.',
-    leader: 'The leader hands off responsibility and steps back. Minimal direction and minimal emotional support — not because the leader does not care, but because the follower does not need either. The leader monitors from a distance and trusts the process.',
-    example: 'A teacher consistently exceeds expectations, develops her own professional goals, and mentors newer teachers without being asked. The principal delegates curriculum decisions to her and her team and checks in only when needed.',
-    tags: [
-      { label: 'Low task', cls: 'tag-task-low' },
-      { label: 'Low relationship', cls: 'tag-rel-low' },
-      { label: 'M4 maturity', cls: 'tag-maturity' }
-    ]
-  }
-};
-
-function openModal(key) {
-  const d = data[key];
-  document.getElementById('m-badge').textContent = d.badge;
-  document.getElementById('m-badge').style.background = d.badgeBg;
-  document.getElementById('m-badge').style.color = d.badgeColor;
-  document.getElementById('m-title').textContent = d.title;
-  document.getElementById('m-subtitle').textContent = d.subtitle;
-  document.getElementById('m-maturity').textContent = d.maturity;
-  document.getElementById('m-leader').textContent = d.leader;
-  document.getElementById('m-example').textContent = d.example;
-  document.getElementById('m-tags').innerHTML = d.tags.map(t => `<span class="modal-tag ${t.cls}">${t.label}</span>`).join('');
-  document.getElementById('overlay').classList.add('open');
-  document.querySelectorAll('.quadrant').forEach(q => q.classList.remove('active'));
-  document.querySelector('.q-' + key).classList.add('active');
-}
-
-function closeModal() {
-  document.getElementById('overlay').classList.remove('open');
-  document.querySelectorAll('.quadrant').forEach(q => q.classList.remove('active'));
-}
-
-function closeOnOverlay(e) {
-  if (e.target === document.getElementById('overlay')) closeModal();
-}
-</script>
-</body>
-</html>
+  @keyframes pulse-teal { 0%,100%{box-shadow:0 0 0 0 rgba(29,158,117,.4)} 50%{box-shadow:0 0 0 4px rgba(29,158,117,0)} }
+  @keyframes pulse-amber { 0%,100%{box-shadow:0 0 0 0 rgba(186,117,23,.4)} 50%{box-shadow:0 0 0 4px rgba(186,117,23,0)} }
+  @keyframes pulse
