@@ -16,7 +16,7 @@
     --coral: #993C1D; --coral-light: #FAECE7; --coral-mid: #F5C4B3; --coral-dark: #712B13;
     --gray: #5F5E5A; --gray-light: #F1EFE8; --gray-mid: #D3D1C7;
     --text: #2C2C2A; --text-muted: #888780; --bg: #FDFCF9;
-    --radius: 12px; --font: 'DM Sans', sans-serif; --serif: 'DM Serif Display', serif;
+    --radius: 10px; --font: 'DM Sans', sans-serif; --serif: 'DM Serif Display', serif;
   }
 
   body {
@@ -27,41 +27,41 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1rem;
+    padding: 0.5rem;
   }
 
-  .page { width: 100%; max-width: 700px; }
+  .page { width: 100%; max-width: 480px; }
 
-  .header { text-align: center; margin-bottom: 2rem; }
+  .header { text-align: center; margin-bottom: 1rem; }
 
   .header h1 {
     font-family: var(--serif);
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--text);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     letter-spacing: -.02em;
   }
 
-  .header p { font-size: 13px; color: var(--text-muted); }
+  .header p { font-size: 11px; color: var(--text-muted); }
 
   .hint {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin-bottom: 1.5rem;
-    font-size: 12px;
+    margin-bottom: 1rem;
+    font-size: 11px;
     color: var(--text-muted);
   }
 
   .hint-dot {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: var(--teal);
     color: white;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -71,14 +71,14 @@
 
   @keyframes pulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(29,158,117,.4); }
-    50% { box-shadow: 0 0 0 6px rgba(29,158,117,0); }
+    50% { box-shadow: 0 0 0 5px rgba(29,158,117,0); }
   }
 
   .grid-container {
     display: grid;
-    grid-template-columns: 32px 1fr 1fr;
-    grid-template-rows: 1fr 1fr 32px;
-    gap: 8px;
+    grid-template-columns: 24px 1fr 1fr;
+    grid-template-rows: 1fr 1fr 24px;
+    gap: 6px;
     width: 100%;
     aspect-ratio: 1.15;
   }
@@ -94,7 +94,7 @@
   .y-axis span {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 600;
     color: var(--text-muted);
     letter-spacing: .08em;
@@ -105,7 +105,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 600;
     color: var(--text-muted);
     letter-spacing: .08em;
@@ -117,7 +117,7 @@
   .quadrant {
     position: relative;
     border-radius: var(--radius);
-    padding: 18px 16px;
+    padding: 10px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -159,13 +159,13 @@
 
   .q-number {
     font-family: var(--serif);
-    font-size: 38px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 1;
     opacity: .18;
     position: absolute;
-    top: 12px;
-    right: 14px;
+    top: 8px;
+    right: 10px;
   }
 
   .q-s3 .q-number { color: var(--teal-dark); }
@@ -174,13 +174,13 @@
   .q-s1 .q-number { color: var(--coral-dark); }
 
   .q-style-tag {
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 600;
     letter-spacing: .06em;
     text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 6px;
-    margin-bottom: 6px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 4px;
   }
 
   .q-s3 .q-style-tag { background: var(--teal-mid); color: var(--teal-dark); }
@@ -188,26 +188,26 @@
   .q-s4 .q-style-tag { background: var(--blue-mid); color: var(--blue-dark); }
   .q-s1 .q-style-tag { background: var(--coral-mid); color: var(--coral-dark); }
 
-  .q-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .q-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
 
   .q-s3 .q-name { color: var(--teal-dark); }
   .q-s2 .q-name { color: var(--amber-dark); }
   .q-s4 .q-name { color: var(--blue-dark); }
   .q-s1 .q-name { color: var(--coral-dark); }
 
-  .q-maturity { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+  .q-maturity { font-size: 9px; color: var(--text-muted); line-height: 1.4; }
 
   .hotspot {
     position: absolute;
-    top: 12px;
-    left: 14px;
-    width: 24px;
-    height: 24px;
+    top: 8px;
+    left: 10px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     color: white;
     cursor: pointer;
@@ -219,24 +219,24 @@
   .q-s4 .hotspot { background: var(--blue); animation: pulse-blue 2s ease-in-out infinite 1s; }
   .q-s1 .hotspot { background: var(--coral); animation: pulse-coral 2s ease-in-out infinite 1.5s; }
 
-  @keyframes pulse-teal { 0%,100%{box-shadow:0 0 0 0 rgba(29,158,117,.4)} 50%{box-shadow:0 0 0 6px rgba(29,158,117,0)} }
-  @keyframes pulse-amber { 0%,100%{box-shadow:0 0 0 0 rgba(186,117,23,.4)} 50%{box-shadow:0 0 0 6px rgba(186,117,23,0)} }
-  @keyframes pulse-blue { 0%,100%{box-shadow:0 0 0 0 rgba(24,95,165,.4)} 50%{box-shadow:0 0 0 6px rgba(24,95,165,0)} }
-  @keyframes pulse-coral { 0%,100%{box-shadow:0 0 0 0 rgba(153,60,29,.4)} 50%{box-shadow:0 0 0 6px rgba(153,60,29,0)} }
+  @keyframes pulse-teal { 0%,100%{box-shadow:0 0 0 0 rgba(29,158,117,.4)} 50%{box-shadow:0 0 0 5px rgba(29,158,117,0)} }
+  @keyframes pulse-amber { 0%,100%{box-shadow:0 0 0 0 rgba(186,117,23,.4)} 50%{box-shadow:0 0 0 5px rgba(186,117,23,0)} }
+  @keyframes pulse-blue { 0%,100%{box-shadow:0 0 0 0 rgba(24,95,165,.4)} 50%{box-shadow:0 0 0 5px rgba(24,95,165,0)} }
+  @keyframes pulse-coral { 0%,100%{box-shadow:0 0 0 0 rgba(153,60,29,.4)} 50%{box-shadow:0 0 0 5px rgba(153,60,29,0)} }
 
   .maturity-bar {
-    margin-top: 14px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 0 40px;
+    gap: 6px;
+    padding: 0 28px;
   }
 
-  .maturity-label { font-size: 10px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+  .maturity-label { font-size: 8px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
 
   .maturity-track {
     flex: 1;
-    height: 4px;
+    height: 3px;
     background: linear-gradient(to right, var(--coral-mid), var(--amber-mid), var(--teal-mid), var(--blue-mid));
     border-radius: 2px;
     position: relative;
@@ -245,23 +245,23 @@
   .maturity-track::after {
     content: '';
     position: absolute;
-    right: -6px;
+    right: -5px;
     top: 50%;
     transform: translateY(-50%);
-    border-left: 7px solid var(--blue-mid);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+    border-left: 5px solid var(--blue-mid);
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
   }
 
   .maturity-steps {
     display: flex;
     justify-content: space-between;
-    padding: 4px 40px 0;
+    padding: 3px 28px 0;
   }
 
-  .m-step { font-size: 10px; color: var(--text-muted); text-align: center; flex: 1; }
+  .m-step { font-size: 8px; color: var(--text-muted); text-align: center; flex: 1; }
 
-  .footer-note { text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 10px; }
+  .footer-note { text-align: center; font-size: 9px; color: var(--text-muted); margin-top: 8px; }
 
   .modal-overlay {
     display: none;
@@ -279,8 +279,8 @@
 
   .modal {
     background: var(--bg);
-    border-radius: 16px;
-    max-width: 420px;
+    border-radius: 14px;
+    max-width: 340px;
     width: 100%;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0,0,0,.2);
@@ -293,21 +293,21 @@
   }
 
   .modal-header {
-    padding: 1.25rem 1.5rem 1rem;
+    padding: 1rem 1.25rem .75rem;
     border-bottom: 1px solid var(--gray-mid);
     position: relative;
   }
 
   .modal-close {
     position: absolute;
-    top: 14px;
-    right: 16px;
+    top: 12px;
+    right: 14px;
     background: var(--gray-light);
     border: none;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     color: var(--text-muted);
     display: flex;
@@ -320,40 +320,40 @@
 
   .modal-badge {
     display: inline-block;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: .07em;
     text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 6px;
-    margin-bottom: 8px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-bottom: 6px;
   }
 
-  .modal-title { font-family: var(--serif); font-size: 22px; font-weight: 400; margin-bottom: 2px; }
-  .modal-subtitle { font-size: 12px; color: var(--text-muted); }
+  .modal-title { font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 2px; }
+  .modal-subtitle { font-size: 11px; color: var(--text-muted); }
 
-  .modal-body { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 14px; }
+  .modal-body { padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 10px; }
 
   .modal-section-title {
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 5px;
+    margin-bottom: 4px;
   }
 
-  .modal-section p { font-size: 13px; line-height: 1.65; color: var(--text); }
+  .modal-section p { font-size: 12px; line-height: 1.6; color: var(--text); }
 
   .modal-tags {
     display: flex;
-    gap: 6px;
+    gap: 5px;
     flex-wrap: wrap;
     padding-top: 4px;
     border-top: 1px solid var(--gray-mid);
   }
 
-  .modal-tag { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 8px; }
+  .modal-tag { font-size: 10px; font-weight: 500; padding: 3px 8px; border-radius: 6px; }
 
   .tag-task-high { background: var(--coral-light); color: var(--coral-dark); }
   .tag-task-low { background: var(--blue-light); color: var(--blue-dark); }
@@ -427,7 +427,7 @@
     <div class="m-step">Able<br>Willing</div>
   </div>
 
-  <div class="footer-note" style="margin-top:14px;">
+  <div class="footer-note" style="margin-top:8px;">
     Follower maturity grows: M1 → M2 → M3 → M4 &nbsp;·&nbsp; The goal is always to move followers toward M4
   </div>
 </div>
@@ -477,7 +477,7 @@ const data = {
     title: 'Selling', subtitle: 'High task behavior · High relationship behavior',
     maturity: 'M2 — Unable but willing. The follower is enthusiastic and motivated but does not yet have the skills or knowledge to perform the task independently. They want to succeed but need guidance.',
     leader: 'The leader explains decisions, provides rationale, and invites questions. High direction is maintained but paired with strong emotional support and encouragement. The leader sells the vision and coaches the how.',
-    example: 'A new teacher is eager to implement the districts adopted online literacy intervention programs, but has no experience with it. The coordinator, walks her through the basics, and checks in regularly with encouragement and needed resources.',
+    example: 'A new teacher is eager to implement the districts adopted online literacy intervention programs, but has no experience with it. The coordinator walks her through the basics, and checks in regularly with encouragement and needed resources.',
     tags: [
       { label: 'High task', cls: 'tag-task-high' },
       { label: 'High relationship', cls: 'tag-rel-high' },
